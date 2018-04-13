@@ -1,0 +1,10 @@
+version: 1.0.0
+files:
+  - url: translate-1.0.0-mac.zip
+    sha512: 7Qyk3MfRb1/GfZkMnhVpaznV2bYimwxl1LpNov6Izj5JVclw9+5NwDuG47AA7a9CEHw9LFq+Hv8Mdh9nrGSaGQ==
+  - url: translate-1.0.0.dmg
+    sha512: 23Q7qxFJO+ZNKJlZ04v2JUAuWpyj4pYR5InCChVMLF7An2B9a7YLy7DOC14p7A/k7yjpQ+CoOq84RBhuEBo7iQ==
+    size: 47151873
+path: translate-1.0.0-mac.zip
+sha512: 7Qyk3MfRb1/GfZkMnhVpaznV2bYimwxl1LpNov6Izj5JVclw9+5NwDuG47AA7a9CEHw9LFq+Hv8Mdh9nrGSaGQ==
+releaseDate: '2018-04-13T02:42:49.313Z'

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>BuildMachineOSBuild</key>
+    <string>16G1212</string>
+    <key>CFBundleDisplayName</key>
+    <string>Google翻译</string>
+    <key>CFBundleExecutable</key>
+    <string>Google翻译</string>
+    <key>CFBundleIconFile</key>
+    <string>Google翻译.icns</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.electron.translate</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>Google翻译</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>DTSDKBuild</key>
+    <string>14D125</string>
+    <key>DTSDKName</key>
+    <string>macosx10.1010.10</string>
+    <key>DTXcode</key>
+    <string>0821</string>
+    <key>DTXcodeBuild</key>
+    <string>8C1002</string>
+    <key>LSApplicationCategoryType</key>
+    <string>your.app.category.type</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>10.9.0</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSMainNibFile</key>
+    <string>MainMenu</string>
+    <key>NSPrincipalClass</key>
+    <string>AtomApplication</string>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2018 GitHub</string>
+    <key>AsarIntegrity</key>
+    <string>{"checksums":{"app.asar":"GPmc4UsXhsl8ANOL1LmPWW8ZH/9okS79SAUkG4/MOvwilq4bcFT+FUnKKY4TZWorZA0F2Xo+X+Kl/46TYEqqhQ==","electron.asar":"ofPEIsT8YhpsxiPf8+uWXh3sWH9KDicszx4MKtBhAgJuX7ruQJNNByfh7Wo07tgoK3tb46ChQdJkdtdJLU1znA=="}}</string>
+  </dict>
+</plist>

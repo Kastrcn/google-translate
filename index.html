@@ -2,18 +2,138 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>谷歌翻译</title>
   </head>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    webview {
+      border: none;
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+<div>
+  <webview id="foo" src="https://translate.google.cn/" sty ></webview>
+</div>
+
 
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
+
+      var Menu = require('electron').remote.Menu;
+      function loadUrl(url) {
+          return function () {
+              webview.src = url;
+          }
+      }
+
+
+      let template = [{
+          label: '修改',
+          submenu: [{
+              label: '撤销',
+              accelerator: 'CmdOrCtrl+Z',
+              role: 'undo'
+          }, {
+              label: '重复',
+              accelerator: 'Shift+CmdOrCtrl+Z',
+              role: 'redo'
+          }, {
+              type: 'separator'
+          }, {
+              label: '剪切',
+              accelerator: 'CmdOrCtrl+X',
+              role: 'cut'
+          }, {
+              label: '复制',
+              accelerator: 'CmdOrCtrl+C',
+              role: 'copy'
+          }, {
+              label: '粘贴',
+              accelerator: 'CmdOrCtrl+V',
+              role: 'paste'
+          }, {
+              label: '全选',
+              accelerator: 'CmdOrCtrl+A',
+              role: 'selectall'
+          }]
+      }, {
+          label: '浏览',
+          submenu: [{
+              label: '刷新',
+              accelerator: 'CmdOrCtrl+R',
+              click: function (item, focusedWindow) {
+                  if (focusedWindow) {
+                      // on reload, start fresh and close any old
+                      // open secondary windows
+                      if (focusedWindow.id === 1) {
+                          BrowserWindow.getAllWindows().forEach(function (win) {
+                              if (win.id > 1) {
+                                  win.close()
+                              }
+                          })
+                      }
+                      focusedWindow.reload()
+                  }
+              }
+          }, {
+              label: '全屏',
+              accelerator: (function () {
+                  if (process.platform === 'darwin') {
+                      return 'Ctrl+Command+F'
+                  } else {
+                      return 'F11'
+                  }
+              })(),
+              click: function (item, focusedWindow) {
+                  if (focusedWindow) {
+                      focusedWindow.setFullScreen(!focusedWindow.isFullScreen())
+                  }
+              }
+          },  {
+              type: 'separator'
+          }]
+      }, {
+          label: '窗口',
+          role: 'window',
+          submenu: [{
+              label: '最小化',
+              accelerator: 'CmdOrCtrl+M',
+              role: 'minimize'
+          }, {
+              label: '退出',
+              accelerator: 'CmdOrCtrl+Q',
+              role: 'quit'
+          }, {
+              type: 'separator'
+          }, {
+              label: 'Reopen Window',
+              accelerator: 'CmdOrCtrl+Shift+T',
+              enabled: false,
+              key: 'reopenMenuItem',
+              click: function () {
+                  app.emit('activate')
+              }
+          }]
+      }, {
+          label: '帮助',
+          role: 'help',
+          submenu: [{
+              label: '查看更多',
+              click: function () {
+                  electron.shell.openExternal('http://electron.atom.io')
+              }
+          }]
+      }]
+      var menu = Menu.buildFromTemplate(template);
+      Menu.setApplicationMenu(menu);
     </script>
   </body>
 </html>

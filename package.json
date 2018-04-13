@@ -1,10 +1,24 @@
 {
-  "name": "electron-quick-start",
+  "name": "translate",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
+  "productName": "Google翻译",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "package": "electron-packager ./ --overwrite -all"
+  },
+  "build": {
+    "appId": "your.id",
+    "mac": {
+      "icon":"build/icons/icon.icns",
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "icon": "build/icons/icon.ico"
+    }
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +31,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.8.4"
+    "electron": "^1.8.4",
+    "electron-builder": "^20.8.1"
   }
 }
