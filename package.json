@@ -13,7 +13,7 @@
   "build": {
     "appId": "your.id",
     "mac": {
-      "icon":"build/icons/icon.icns",
+      "icon": "build/icons/icon.icns",
       "category": "your.app.category.type"
     },
     "win": {
@@ -32,6 +32,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^1.8.4",
-    "electron-builder": "^20.8.1"
+    "electron-builder": "^20.8.1",
+    "electron-packager": "^13.1.1"
   }
 }
